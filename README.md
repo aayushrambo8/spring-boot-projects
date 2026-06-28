@@ -20,6 +20,8 @@ Below is the list of projects currently in this repository, along with their des
 A baseline Spring Boot application containing a `HelloController` endpoint to verify configuration.
 - **Key Features**:
   - Simple REST controller testing setup.
+  - REST Endpoints:
+    - `GET /hello`: Returns an HTML greeting (`<h1>Hello World!</h1>`).
   - Maven wrapper configured.
   - Individual project `.gitignore`.
 
