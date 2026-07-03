@@ -10,7 +10,8 @@ Below is the list of projects currently in this repository, along with their des
 
 | Project Name | Description | Tech Stack |
 | :--- | :--- | :--- |
-| **[Demo](./Demo)** | A starter Spring Boot Web application featuring a simple REST controller. | Java 21, Spring Boot 4.1.0, Maven |
+| **[Demo](./Demo)** | A starter Spring Boot Web application featuring a simple REST controller, now with database connectivity dependencies. | Java 23, Spring Boot 4.1.0, MySQL, Hibernate Core, Maven |
+| **[SpringBootDemo](./SpringBootDemo)** | A core Spring Framework project demonstrating IoC Container and Dependency Injection using annotation configuration. | Java 23, Spring Framework 7.0.7, Maven |
 
 ---
 
@@ -24,6 +25,16 @@ A baseline Spring Boot application containing a `HelloController` endpoint to ve
     - `GET /hello`: Returns an HTML greeting (`<h1>Hello World!</h1>`).
   - Maven wrapper configured.
   - Individual project `.gitignore`.
+  - Upgraded to Java 23.
+  - Added MySQL Connector/J and Hibernate ORM dependency configurations.
+
+### 📂 [SpringBootDemo](./SpringBootDemo)
+A core Spring application showcasing bean configuration, dependency injection, and component scanning.
+- **Key Features**:
+  - Pure Spring IoC Container demonstration using `AnnotationConfigApplicationContext`.
+  - Component scanning configured via `@ComponentScan` on `@Configuration` class (`AppConfig`).
+  - Simple service injection (`OrderService` and `PaymentService`).
+  - Running on Java 23 and Spring Framework 7.0.7.
 
 ---
 
