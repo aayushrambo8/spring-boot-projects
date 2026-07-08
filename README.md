@@ -12,6 +12,7 @@ Below is the list of projects currently in this repository, along with their des
 | :--- | :--- | :--- |
 | **[Demo](./Demo)** | A starter Spring Boot Web application featuring a simple REST controller, now with database connectivity dependencies. | Java 23, Spring Boot 4.1.0, MySQL, Hibernate Core, Maven |
 | **[SpringBootDemo](./SpringBootDemo)** | A core Spring Framework project demonstrating IoC Container and Dependency Injection using annotation configuration. | Java 23, Spring Framework 7.0.7, Maven |
+| **[CircularDependancy](./CircularDependancy)** | A core Spring Framework project demonstrating circular dependency behaviors and resolution. | Java 23, Spring Framework 7.0.7, Maven |
 
 ---
 
@@ -34,6 +35,14 @@ A core Spring application showcasing bean configuration, dependency injection, a
   - Pure Spring IoC Container demonstration using `AnnotationConfigApplicationContext`.
   - Component scanning configured via `@ComponentScan` on `@Configuration` class (`AppConfig`).
   - Simple service injection (`OrderService` and `PaymentService`).
+  - Running on Java 23 and Spring Framework 7.0.7.
+
+### 📂 [CircularDependancy](./CircularDependancy)
+A core Spring application demonstrating circular dependency behaviors and how the Spring container handles field-based vs. constructor-based dependency injection.
+- **Key Features**:
+  - Simple IoC container setup with `@Configuration` class (`AppConfig`).
+  - Demonstrate components (`OrderService` and `PaymentService`) referencing each other.
+  - Showcases field injection behavior for circular dependencies.
   - Running on Java 23 and Spring Framework 7.0.7.
 
 ---
