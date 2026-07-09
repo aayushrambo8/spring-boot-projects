@@ -14,7 +14,7 @@ Below is the list of projects currently in this repository, along with their des
 | **[SpringBootDemo](./SpringBootDemo)** | A core Spring Framework project demonstrating IoC Container and Dependency Injection using annotation configuration. | Java 23, Spring Framework 7.0.7, Maven |
 | **[CircularDependancy](./CircularDependancy)** | A core Spring Framework project demonstrating circular dependency behaviors and resolution. | Java 23, Spring Framework 7.0.7, Maven |
 | **[Bean Scopes](./Bean%20Scopes)** | A core Spring Framework project demonstrating bean scopes (Singleton and Prototype) and their lifecycles. | Java 23, Spring Framework 7.0.7, Maven |
-| **[BeanInitialization](./BeanInitialization)** | A core Spring Framework project demonstrating bean configuration, creation, scanning, and initialization log. | Java 17, Spring Framework 7.0.7, Maven |
+| **[BeanInitialization](./BeanInitialization)** | A core Spring Framework project demonstrating eager vs. lazy bean initialization and scanning behavior. | Java 23, Spring Framework 7.0.7, Maven |
 
 ---
 
@@ -57,12 +57,18 @@ A core Spring application showcasing Spring bean scopes (Singleton, Prototype, e
   - Configured for Java 23 and Spring Framework 7.0.7.
 
 ### 📂 [BeanInitialization](./BeanInitialization)
-A core Spring application demonstrating bean configuration, scanning, and initialization logs.
+A core Spring application demonstrating Spring bean instantiation sequence, component scanning, and lazy bean initialization behavior.
 - **Key Features**:
   - Core Spring Context setup using `AnnotationConfigApplicationContext` and `@ComponentScan`.
-  - Simple component scanning configuration.
-  - Logging during constructor execution to observe bean creation sequence.
-  - Configured for Java 17 and Spring Framework 7.0.7.
+  - Demonstrates lazy bean instantiation by configuring `PaymentService` with the `@Lazy` annotation.
+  - Demonstrates how manual creation of a component (`new PaymentService()`) inside the constructor of an eager bean (`OrderService`) affects initialization logs.
+  - Console logging inside constructors to verify the exact initialization sequence.
+  - Running on Java 23 and Spring Framework 7.0.7.
+- **Expected Console Output**:
+  ```text
+  PaymentService created
+  OrderService created
+  ```
 
 ---
 
