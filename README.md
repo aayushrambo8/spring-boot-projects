@@ -11,10 +11,10 @@ Below is the list of projects currently in this repository, along with their des
 | Project Name | Description | Tech Stack |
 | :--- | :--- | :--- |
 | **[Demo](./Demo)** | A starter Spring Boot Web application featuring a simple REST controller, now with database connectivity dependencies. | Java 23, Spring Boot 4.1.0, MySQL, Hibernate Core, Maven |
-| **[SpringBootDemo](./SpringBootDemo)** | A core Spring Framework project demonstrating IoC Container and Dependency Injection using annotation configuration. | Java 23, Spring Framework 7.0.7, Maven |
-| **[CircularDependancy](./CircularDependancy)** | A core Spring Framework project demonstrating circular dependency behaviors and resolution. | Java 23, Spring Framework 7.0.7, Maven |
+| **[Spring Boot Demo](./Spring%20Boot%20Demo)** | A core Spring Framework project demonstrating IoC Container and Dependency Injection using annotation configuration. | Java 23, Spring Framework 7.0.7, Maven |
+| **[Circular Dependancy](./Circular%20Dependancy)** | A core Spring Framework project demonstrating circular dependency behaviors and resolution. | Java 23, Spring Framework 7.0.7, Maven |
 | **[Bean Scopes](./Bean%20Scopes)** | A core Spring Framework project demonstrating bean scopes (Singleton and Prototype) and their lifecycles. | Java 23, Spring Framework 7.0.7, Maven |
-| **[BeanInitialization](./BeanInitialization)** | A core Spring Framework project demonstrating eager vs. lazy bean initialization and scanning behavior. | Java 23, Spring Framework 7.0.7, Maven |
+| **[Bean Initialization](./Bean%20Initialization)** | A core Spring Framework project demonstrating eager vs. lazy bean initialization and scanning behavior. | Java 23, Spring Framework 7.0.7, Maven |
 
 ---
 
@@ -31,7 +31,7 @@ A baseline Spring Boot application containing a `HelloController` endpoint to ve
   - Upgraded to Java 23.
   - Added MySQL Connector/J and Hibernate ORM dependency configurations.
 
-### 📂 [SpringBootDemo](./SpringBootDemo)
+### 📂 [Spring Boot Demo](./Spring%20Boot%20Demo)
 A core Spring application showcasing bean configuration, dependency injection, and component scanning.
 - **Key Features**:
   - Pure Spring IoC Container demonstration using `AnnotationConfigApplicationContext`.
@@ -39,7 +39,7 @@ A core Spring application showcasing bean configuration, dependency injection, a
   - Simple service injection (`OrderService` and `PaymentService`).
   - Running on Java 23 and Spring Framework 7.0.7.
 
-### 📂 [CircularDependancy](./CircularDependancy)
+### 📂 [Circular Dependancy](./Circular%20Dependancy)
 A core Spring application demonstrating circular dependency behaviors and how the Spring container handles field-based vs. constructor-based dependency injection.
 - **Key Features**:
   - Simple IoC container setup with `@Configuration` class (`AppConfig`).
@@ -56,7 +56,7 @@ A core Spring application showcasing Spring bean scopes (Singleton, Prototype, e
   - Console logging during bean creation to observe bean lifecycle and scope behaviors.
   - Configured for Java 23 and Spring Framework 7.0.7.
 
-### 📂 [BeanInitialization](./BeanInitialization)
+### 📂 [Bean Initialization](./Bean%20Initialization)
 A core Spring application demonstrating Spring bean instantiation sequence, component scanning, and lazy bean initialization behavior.
 - **Key Features**:
   - Core Spring Context setup using `AnnotationConfigApplicationContext` and `@ComponentScan`.
