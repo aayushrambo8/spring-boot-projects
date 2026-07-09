@@ -51,6 +51,7 @@ A core Spring application showcasing Spring bean scopes (Singleton, Prototype, e
 - **Key Features**:
   - Core Spring Context setup using `AnnotationConfigApplicationContext` and `@ComponentScan`.
   - Constructor injection demonstration with components `A` and `B` dependency on `OrderService`.
+  - Demonstration of prototype bean scope by configuring `OrderService` with `@Scope("prototype")` and requesting multiple instances in `Main`.
   - Console logging during bean creation to observe bean lifecycle and scope behaviors.
   - Configured for Java 23 and Spring Framework 7.0.7.
 
