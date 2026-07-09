@@ -1,8 +1,10 @@
 package live.aayush;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype")
 public class OrderService
 {
     public OrderService()
