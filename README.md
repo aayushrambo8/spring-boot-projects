@@ -13,7 +13,7 @@ Below is the list of projects currently in this repository, along with their des
 | **[Demo](./Demo)** | A starter Spring Boot Web application featuring a simple REST controller, now with database connectivity dependencies. | Java 23, Spring Boot 4.1.0, MySQL, Hibernate Core, Maven |
 | **[SpringBootDemo](./SpringBootDemo)** | A core Spring Framework project demonstrating IoC Container and Dependency Injection using annotation configuration. | Java 23, Spring Framework 7.0.7, Maven |
 | **[CircularDependancy](./CircularDependancy)** | A core Spring Framework project demonstrating circular dependency behaviors and resolution. | Java 23, Spring Framework 7.0.7, Maven |
-| **[Bean Scopes](./Bean%20Scopes)** | A core Spring Framework project demonstrating bean scopes (Singleton and Prototype) and their lifecycles. | Java 23, Maven |
+| **[Bean Scopes](./Bean%20Scopes)** | A core Spring Framework project demonstrating bean scopes (Singleton and Prototype) and their lifecycles. | Java 23, Spring Framework 7.0.7, Maven |
 
 ---
 
@@ -49,9 +49,10 @@ A core Spring application demonstrating circular dependency behaviors and how th
 ### 📂 [Bean Scopes](./Bean%20Scopes)
 A core Spring application showcasing Spring bean scopes (Singleton, Prototype, etc.) and lifecycle callbacks.
 - **Key Features**:
-  - Demonstration of bean initialization and scopes.
-  - Maven-based configuration.
-  - Configured for Java 23.
+  - Core Spring Context setup using `AnnotationConfigApplicationContext` and `@ComponentScan`.
+  - Constructor injection demonstration with components `A` and `B` dependency on `OrderService`.
+  - Console logging during bean creation to observe bean lifecycle and scope behaviors.
+  - Configured for Java 23 and Spring Framework 7.0.7.
 
 ---
 
