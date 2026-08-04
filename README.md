@@ -16,6 +16,7 @@ Below is the list of projects currently in this repository, along with their des
 | **[Bean Scopes](./Bean%20Scopes)** | A core Spring Framework project demonstrating bean scopes (Singleton and Prototype) and their lifecycles. | Java 23, Spring Framework 7.0.7, Maven |
 | **[Bean Initialization](./Bean%20Initialization)** | A core Spring Framework project demonstrating eager vs. lazy bean initialization and scanning behavior. | Java 23, Spring Framework 7.0.7, Maven |
 | **[Application Properties](./Application%20Properties)** | A Spring Boot project demonstrating typed external configuration properties binding using `@ConfigurationProperties`. | Java 21, Spring Boot 4.1.0, Maven |
+| **[Bean Lifecycle](./Bean%20Lifecycle)** | A core Spring Framework project exploring bean configuration and lifecycles in the IoC container. | Java 23, Spring Framework 7.0.7, Maven |
 
 ---
 
@@ -77,6 +78,14 @@ A Spring Boot application demonstrating external configuration properties bindin
   - Configuration properties class (`PaymentProperties`) bound to the prefix `payment-properties` using `@ConfigurationProperties`.
   - Spring-managed component (`PaymentGateway`) wrapping and exposing the configuration properties.
   - Setup using `@SpringBootApplication` and running on Java 21 and Spring Boot 4.1.0.
+
+### 📂 [Bean Lifecycle](./Bean%20Lifecycle)
+A core Spring application showcasing bean configuration, scanning, and instantiation behavior.
+- **Key Features**:
+  - Core Spring Context bootstrap using `AnnotationConfigApplicationContext`.
+  - Component scanning configured via `@ComponentScan` on `AppConfig`.
+  - Running on Java 23 and Spring Framework 7.0.7.
+
 
 ---
 
