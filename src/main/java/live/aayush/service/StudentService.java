@@ -2,9 +2,9 @@ package live.aayush.service;
 
 import live.aayush.entity.Student;
 import live.aayush.repository.StudentRepository;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class StudentService
 {
     private StudentRepository studentRepository;
@@ -16,7 +16,7 @@ public class StudentService
 
     public Student createStudent(Student studentRequest)
     {
-        Student studentResponse = studentRepository.saveStudent(studentRequest);
+        Student studentResponse = studentRepository.save(studentRequest);
         return studentResponse;
     }
 }

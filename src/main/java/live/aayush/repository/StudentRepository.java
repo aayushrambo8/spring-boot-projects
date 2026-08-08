@@ -1,20 +1,11 @@
 package live.aayush.repository;
 
 import live.aayush.entity.Student;
-import org.springframework.stereotype.Service;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-@Service
-public class StudentRepository
+@Repository
+public interface StudentRepository extends JpaRepository<Student, Long>
 {
-    public Student saveStudent(Student studentReq)
-    {
-        System.out.println("Inside Student Repository");
-        Student s1 = new Student();
-        s1.setAge(22);
-        s1.setEmail("aayushrambo8");
-        s1.setName("Aayush");
-        s1.setRollNo(226);
-        s1.setSubject("CS2");
-        return s1;
-    }
+    
 }
