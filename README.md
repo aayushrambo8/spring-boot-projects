@@ -18,7 +18,7 @@ Below is the list of projects currently in this repository, along with their des
 | **[Bean Lifecycle](./Bean%20Lifecycle)** | A core Spring Framework project exploring bean configuration and lifecycles in the IoC container. | Java 23, Spring Framework 7.0.7, Maven |
 | **[Spring Core](./Spring%20Core)** | A core Spring Boot project showcasing IoC Container, Dependency Injection, and Component Scanning. | Java 23, Spring Boot 4.1.0, Maven |
 | **[Application Properties](./Application%20Properties)** | A Spring Boot project demonstrating typed external configuration properties binding using `@ConfigurationProperties`. | Java 21, Spring Boot 4.1.0, Maven |
-| **[SpringBootCrudProject](./SpringBootCrudProject)** | A RESTful CRUD API for managing Student records, featuring full Create, Read, Update, and Delete operations backed by MySQL via Spring Data JPA. | Java 23, Spring Boot 4.1.0, Spring Data JPA, MySQL, Maven |
+| **[SpringBootCrudProject](./SpringBootCrudProject)** | A RESTful CRUD API for managing Student records with full CRUD and soft delete support, backed by MySQL via Spring Data JPA. Includes a Bruno API collection for endpoint testing. | Java 23, Spring Boot 4.1.0, Spring Data JPA, MySQL, Maven, Bruno |
 
 ---
 
@@ -96,24 +96,42 @@ A Spring Boot application demonstrating external configuration properties bindin
   - Setup using `@SpringBootApplication` and running on Java 21 and Spring Boot 4.1.0.
 
 ### 📂 [SpringBootCrudProject](./SpringBootCrudProject)
-A full-featured RESTful CRUD API built with Spring Boot and Spring Data JPA for managing Student records persisted in a MySQL database.
+A full-featured RESTful CRUD API built with Spring Boot and Spring Data JPA for managing Student records persisted in a MySQL database, with soft delete support and a Bruno API collection for testing.
 - **Key Features**:
-  - Layered architecture: `controller`, `service`, `model`, and `repository` packages.
-  - `StudentRepository` extends `JpaRepository` for out-of-the-box data access.
+  - Layered architecture: `controller`, `service`, `entity`, and `repository` packages.
+  - `StudentRepository` extends `JpaRepository` with custom derived queries to exclude soft-deleted records.
   - `StudentService` encapsulates all business logic, interfacing between controller and repository.
-  - Full CRUD operations exposed via `StudentController`.
-  - `deleteById` returns a descriptive response message; `deleteAll` clears the entire table.
+  - Full CRUD operations exposed via `StudentController` using `@RequestParam` for ID-based lookups.
+  - `@GeneratedValue(strategy = GenerationType.IDENTITY)` for auto-incremented student IDs.
+  - Soft delete: marks a record as `deleted = true` and hides it from all read/update operations without removing from the database.
+  - Hard delete: permanently removes a record or clears the entire table.
+  - Bruno API collection (`Bruno/`) included for quick, out-of-the-box endpoint testing.
   - Running on Java 23, Spring Boot 4.1.0, and MySQL.
-- **API Endpoints**:
+- **API Endpoints** (base: `http://localhost:8080/api/student`):
 
-  | Method | Endpoint | Description |
-  | :----- | :------- | :---------- |
-  | `GET` | `/students` | Retrieve all student records |
-  | `GET` | `/students/{id}` | Retrieve a student by ID |
-  | `POST` | `/students/add` | Add a new student |
-  | `PUT` | `/students/update/{id}` | Update an existing student |
-  | `DELETE` | `/students/delete/{id}` | Delete a student by ID |
-  | `DELETE` | `/students/deleteAll` | Delete all student records |
+  | Method     | Endpoint                      | Description                              |
+  | :--------- | :---------------------------- | :--------------------------------------- |
+  | `POST`     | `/create`                     | Create a new student record              |
+  | `GET`      | `/get?id={id}`                | Retrieve a non-deleted student by ID     |
+  | `GET`      | `/getAll`                     | Retrieve all non-deleted students        |
+  | `PUT`      | `/update?id={id}`             | Update an existing student by ID         |
+  | `PATCH`    | `/soft-delete?id={id}`        | Soft delete a student (sets deleted=true)|
+  | `DELETE`   | `/delete?id={id}`             | Hard delete a student by ID             |
+  | `DELETE`   | `/deleteAll`                  | Hard delete all student records          |
+
+- **Prerequisites**:
+  - MySQL running locally on port `3306`.
+  - A database named `Student_CRUD_db` must exist:
+    ```sql
+    CREATE DATABASE Student_CRUD_db;
+    ```
+  - Default credentials: `username=root`, `password=root` (configurable in `application.properties`).
+
+- **Testing with Bruno**:
+  1. Install [Bruno](https://www.usebruno.com/) (free, open-source API client).
+  2. Open Bruno → **Open Collection** → select the `SpringBootCrudProject/Bruno/` folder.
+  3. Select the **Local** environment (sets `baseUrl` to `http://localhost:8080`).
+  4. Run any request — all endpoints are pre-configured with sample payloads.
 
 
 ---
