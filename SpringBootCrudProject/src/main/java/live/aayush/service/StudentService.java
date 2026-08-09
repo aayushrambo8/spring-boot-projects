@@ -10,7 +10,7 @@ import java.util.Optional;
 @Service
 public class StudentService
 {
-    private StudentRepository studentRepository;
+    private final StudentRepository studentRepository;
 
     public StudentService(StudentRepository studentRepository)
     {
@@ -19,24 +19,26 @@ public class StudentService
 
     public Student createStudent(Student studentRequest)
     {
+        studentRequest.setDeleted(false);
         return studentRepository.save(studentRequest);
     }
 
     public Student getStudent(Long id)
     {
-        return studentRepository.findById(id).orElse(null);
+        Optional<Student> studentResponse = studentRepository.findByIdAndDeletedIsFalse(id);
+        if(studentResponse.isPresent()) return studentResponse.get();
+        return null;
     }
 
     public List<Student> getAllStudent()
     {
-        return studentRepository.findAll();
+        return studentRepository.findByDeletedIsFalse();
     }
 
     public Student updateStudent(Long id, Student studentRequest)
     {
-        Optional<Student> existingStudent = studentRepository.findById(id);
-        if(existingStudent.isEmpty())
-            return null;
+        Optional<Student> existingStudent = studentRepository.findByIdAndDeletedIsFalse(id);
+        if(existingStudent.isEmpty()) return null;
 
         Student studentUpdate = existingStudent.get();
 
@@ -45,6 +47,7 @@ public class StudentService
         studentUpdate.setEmail(studentRequest.getEmail());
         studentUpdate.setSubject(studentRequest.getSubject());
         studentUpdate.setRollNo(studentRequest.getRollNo());
+        studentUpdate.setDeleted(false);
 
         return studentRepository.save(studentUpdate);
     }
@@ -52,8 +55,7 @@ public class StudentService
     public boolean deleteStudent(Long id)
     {
         boolean isStudent = studentRepository.existsById(id);
-        if(!isStudent)
-            return false;
+        if(!isStudent) return false;
         studentRepository.deleteById(id);
         return true;
     }
@@ -61,5 +63,14 @@ public class StudentService
     public void deleteAllStudent()
     {
         studentRepository.deleteAll();
+    }
+
+    public boolean softDeleteStudent(Long id)
+    {
+        Optional<Student> existingStudent = studentRepository.findByIdAndDeletedIsFalse(id);
+        if(existingStudent.isEmpty()) return false;
+        existingStudent.get().setDeleted(true);
+        studentRepository.save(existingStudent.get());
+        return true;
     }
 }
