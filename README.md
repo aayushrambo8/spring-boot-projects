@@ -18,6 +18,7 @@ Below is the list of projects currently in this repository, along with their des
 | **[Bean Lifecycle](./Bean%20Lifecycle)** | A core Spring Framework project exploring bean configuration and lifecycles in the IoC container. | Java 23, Spring Framework 7.0.7, Maven |
 | **[Spring Core](./Spring%20Core)** | A core Spring Boot project showcasing IoC Container, Dependency Injection, and Component Scanning. | Java 23, Spring Boot 4.1.0, Maven |
 | **[Application Properties](./Application%20Properties)** | A Spring Boot project demonstrating typed external configuration properties binding using `@ConfigurationProperties`. | Java 21, Spring Boot 4.1.0, Maven |
+| **[SpringBootCrudProject](./SpringBootCrudProject)** | A RESTful CRUD API for managing Student records, featuring full Create, Read, Update, and Delete operations backed by MySQL via Spring Data JPA. | Java 23, Spring Boot 4.1.0, Spring Data JPA, MySQL, Maven |
 
 ---
 
@@ -93,6 +94,26 @@ A Spring Boot application demonstrating external configuration properties bindin
   - Configuration properties class (`PaymentProperties`) bound to the prefix `payment-properties` using `@ConfigurationProperties`.
   - Spring-managed component (`PaymentGateway`) wrapping and exposing the configuration properties.
   - Setup using `@SpringBootApplication` and running on Java 21 and Spring Boot 4.1.0.
+
+### 📂 [SpringBootCrudProject](./SpringBootCrudProject)
+A full-featured RESTful CRUD API built with Spring Boot and Spring Data JPA for managing Student records persisted in a MySQL database.
+- **Key Features**:
+  - Layered architecture: `controller`, `service`, `model`, and `repository` packages.
+  - `StudentRepository` extends `JpaRepository` for out-of-the-box data access.
+  - `StudentService` encapsulates all business logic, interfacing between controller and repository.
+  - Full CRUD operations exposed via `StudentController`.
+  - `deleteById` returns a descriptive response message; `deleteAll` clears the entire table.
+  - Running on Java 23, Spring Boot 4.1.0, and MySQL.
+- **API Endpoints**:
+
+  | Method | Endpoint | Description |
+  | :----- | :------- | :---------- |
+  | `GET` | `/students` | Retrieve all student records |
+  | `GET` | `/students/{id}` | Retrieve a student by ID |
+  | `POST` | `/students/add` | Add a new student |
+  | `PUT` | `/students/update/{id}` | Update an existing student |
+  | `DELETE` | `/students/delete/{id}` | Delete a student by ID |
+  | `DELETE` | `/students/deleteAll` | Delete all student records |
 
 
 ---
