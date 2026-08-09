@@ -39,9 +39,9 @@ public class StudentController
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<Student>> getAllStudent(@PathVariable Long id)
+    public ResponseEntity<List<Student>> getAllStudent()
     {
-        List<Student> studentList = studentService.getAllStudent(id);
+        List<Student> studentList = studentService.getAllStudent();
         if(studentList == null)
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         else
@@ -60,12 +60,18 @@ public class StudentController
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Student> deleteStudent(@PathVariable Long id)
+    public ResponseEntity<String> deleteStudent(@PathVariable Long id)
     {
-        Student studentResponse = studentService.getStudent(id);
-        if(studentResponse == null)
+        boolean isDeleted = studentService.deleteStudent(id);
+        if(!isDeleted)
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        else
-            return null;
+        return ResponseEntity.ok("Record Deleted");
+    }
+
+    @DeleteMapping("/deleteAll")
+    public ResponseEntity<String> deleteAllStudent()
+    {
+        studentService.deleteAllStudent();
+        return ResponseEntity.ok("All Records Deleted");
     }
 }

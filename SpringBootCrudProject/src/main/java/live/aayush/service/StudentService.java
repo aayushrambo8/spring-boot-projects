@@ -27,7 +27,7 @@ public class StudentService
         return studentRepository.findById(id).orElse(null);
     }
 
-    public List<Student> getAllStudent(Long id)
+    public List<Student> getAllStudent()
     {
         return studentRepository.findAll();
     }
@@ -49,8 +49,17 @@ public class StudentService
         return studentRepository.save(studentUpdate);
     }
 
-    public void deleteStudent(Long id)
+    public boolean deleteStudent(Long id)
     {
+        boolean isStudent = studentRepository.existsById(id);
+        if(!isStudent)
+            return false;
         studentRepository.deleteById(id);
+        return true;
+    }
+
+    public void deleteAllStudent()
+    {
+        studentRepository.deleteAll();
     }
 }
