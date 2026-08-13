@@ -19,6 +19,7 @@ Below is the list of projects currently in this repository, along with their des
 | **[Spring Core](./Spring%20Core)** | A core Spring Boot project showcasing IoC Container, Dependency Injection, and Component Scanning. | Java 23, Spring Boot 4.1.0, Maven |
 | **[Application Properties](./Application%20Properties)** | A Spring Boot project demonstrating typed external configuration properties binding using `@ConfigurationProperties`. | Java 21, Spring Boot 4.1.0, Maven |
 | **[SpringBootCrudProject](./SpringBootCrudProject)** | A RESTful CRUD API for managing Student records, featuring full Create, Read, Update, and Delete operations backed by MySQL via Spring Data JPA. | Java 23, Spring Boot 4.1.0, Spring Data JPA, MySQL, Maven |
+| **[SpringMVC](./SpringMVC)** | A Spring MVC web application project. | Java 23, Spring MVC, Maven |
 
 ---
 
@@ -115,6 +116,11 @@ A full-featured RESTful CRUD API built with Spring Boot and Spring Data JPA for 
   | `DELETE` | `/students/delete/{id}` | Delete a student by ID |
   | `DELETE` | `/students/deleteAll` | Delete all student records |
 
+### 📂 [SpringMVC](./SpringMVC)
+A Spring MVC web application project.
+- **Key Features**:
+  - Web application built with Spring MVC.
+  - Running on Java 23 and Maven.
 
 ---
 
