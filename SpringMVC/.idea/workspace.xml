@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b0c4f645-5323-4432-baa3-c9d2c88c05a1" name="Changes" comment="Sudden changes" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="SpringMVC" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;aayushrambo8&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/aayushrambo8/spring-boot-projects.git&quot;,
+    &quot;accountId&quot;: &quot;f2044df6-d121-4d8f-998a-859bfaf33931&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0252085703679439" />
+      <entry key="MS500" value="1.5583727196607324" />
+      <entry key="S2" value="2.9111022649805065" />
+      <entry key="S5" value="3.900926010932957" />
+      <entry key="S10" value="4.391822694509589" />
+      <entry key="S30" value="4.8523896300383615" />
+      <entry key="S60" value="5.418884098512322" />
+      <entry key="M2" value="7.638239342231738" />
+      <entry key="M5" value="17.80111050278183" />
+      <entry key="M10" value="31.015912660578213" />
+      <entry key="M15" value="38.948188389525065" />
+      <entry key="M30" value="50.07456349347694" />
+      <entry key="H1" value="57.30535233562888" />
+      <entry key="H2" value="61.44955270034932" />
+      <entry key="H4" value="63.671203479427234" />
+      <entry key="D1" value="65.60417547248579" />
+      <entry key="W1" value="65.94326189456791" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.446928390241455E-209" />
+      <entry key="S2" value="7.129139451583895E-53" />
+      <entry key="S5" value="1.6275552100650538E-21" />
+      <entry key="S10" value="5.699877063566167E-11" />
+      <entry key="S30" value="0.0011491120884922193" />
+      <entry key="S60" value="0.105789923785227" />
+      <entry key="M2" value="1.2576797245377922" />
+      <entry key="M5" value="7.306733697670936" />
+      <entry key="M10" value="14.883198751982508" />
+      <entry key="M15" value="19.31358368532733" />
+      <entry key="M30" value="25.422461447259106" />
+      <entry key="H1" value="29.338573286392965" />
+      <entry key="H2" value="31.566456267962636" />
+      <entry key="H4" value="32.75618864199255" />
+      <entry key="D1" value="33.78882325023191" />
+      <entry key="W1" value="33.96973539715778" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9640419763004398" />
+      <entry key="MS500" value="1.5426216328664257" />
+      <entry key="S2" value="2.9039760101562524" />
+      <entry key="S5" value="3.8969641530091734" />
+      <entry key="S10" value="4.389553603580239" />
+      <entry key="S30" value="4.852604534072184" />
+      <entry key="S60" value="5.520952746176305" />
+      <entry key="M2" value="8.874411892956543" />
+      <entry key="M5" value="25.048714793797117" />
+      <entry key="M10" value="45.83402149374216" />
+      <entry key="M15" value="58.203995986784086" />
+      <entry key="M30" value="75.45805095345948" />
+      <entry key="H1" value="86.62117150347305" />
+      <entry key="H2" value="93.0036982267799" />
+      <entry key="H4" value="96.42098690729179" />
+      <entry key="D1" value="99.39189499890496" />
+      <entry key="W1" value="99.91283871059011" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Hrc4uB5sKtrIEkU8I6cUjhkM6o" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="sortByType" value="true" />
+    <option name="sortKey" value="BY_TYPE" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Programming/Spring Boot Projects/SpringMVC/src/main/java/live/aayush",
+    "onboarding.tips.debug.path": "D:/Programming/Spring Boot Projects/SpringMVC/src/main/java/live/aayush/Main.java",
+    "settings.editor.selected.configurable": "settings.sync",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming\Spring Boot Projects\SpringMVC\src\main\java\live\aayush" />
+      <recent name="D:\Programming\Spring Boot Projects\SpringMVC" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-34e2839f716b-intellij.indexing.shared.core-IU-262.9437.185" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b0c4f645-5323-4432-baa3-c9d2c88c05a1" name="Changes" comment="" />
+      <created>1786629440790</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1786629440790</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Sudden changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sudden changes" />
+  </component>
+</project>
