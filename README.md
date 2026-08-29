@@ -19,6 +19,7 @@ Below is the list of projects currently in this repository, along with their des
 | **[Spring Core](./Spring%20Core)** | A core Spring Boot project showcasing IoC Container, Dependency Injection, and Component Scanning. | Java 23, Spring Boot 4.1.0, Maven |
 | **[Application Properties](./Application%20Properties)** | A Spring Boot project demonstrating typed external configuration properties binding using `@ConfigurationProperties`. | Java 21, Spring Boot 4.1.0, Maven |
 | **[SpringBootCrudProject](./SpringBootCrudProject)** | A RESTful CRUD API for managing Student records with full CRUD and soft delete support, backed by MySQL via Spring Data JPA. Includes a Bruno API collection for endpoint testing. | Java 23, Spring Boot 4.1.0, Spring Data JPA, MySQL, Maven, Bruno |
+| **[SpringCrudDTO](./SpringCrudDTO)** | A RESTful CRUD API demonstrating the use of Data Transfer Objects (DTOs) for managing Student records. | Java 21, Spring Boot 4.1.1, Spring Data JPA, MySQL, Maven |
 
 ---
 
@@ -132,6 +133,16 @@ A full-featured RESTful CRUD API built with Spring Boot and Spring Data JPA for 
   2. Open Bruno → **Open Collection** → select the `SpringBootCrudProject/Bruno/` folder.
   3. Select the **Local** environment (sets `baseUrl` to `http://localhost:8080`).
   4. Run any request — all endpoints are pre-configured with sample payloads.
+
+### 📂 [SpringCrudDTO](./SpringCrudDTO)
+A Spring Boot application demonstrating the use of Data Transfer Objects (DTOs) to decouple database entities from the REST API layer.
+- **Key Features**:
+  - Implements `StudentRequestDTO` and `StudentResponseDTO` to encapsulate API request and response data.
+  - `StudentService` handles the mapping between the `Student` entity and DTOs.
+  - `Student` entity includes auditing fields (`createdAt`, `updatedAt`).
+  - Exposes REST endpoints via `StudentController` returning cleanly formatted DTOs.
+  - Configured with MySQL database connection.
+  - Running on Java 21 and Spring Boot 4.1.1.
 
 
 ---
