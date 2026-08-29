@@ -1,5 +1,7 @@
 package live.aayush.service;
 
+import live.aayush.dto.StudentRequestDTO;
+import live.aayush.dto.StudentResponseDTO;
 import live.aayush.entity.Student;
 import live.aayush.repository.StudentRepository;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,33 @@ import java.util.Optional;
 @Service
 public class StudentService
 {
+    private Student mapToEntity(StudentRequestDTO studentRequestDTO)
+    {
+        Student student = new Student();
+        student.setName(studentRequestDTO.getName());
+        student.setEmail(studentRequestDTO.getEmail());
+        student.setAge(studentRequestDTO.getAge());
+        student.setSubject(studentRequestDTO.getSubject());
+        student.setRollNo(studentRequestDTO.getRollNo());
+        student.setDeleted(false);
+
+        return student;
+    }
+
+    private StudentResponseDTO mapToDTO(Student student)
+    {
+        StudentResponseDTO studentResponseDTO = new StudentResponseDTO();
+        studentResponseDTO.setId(student.getId());
+        studentResponseDTO.setName(student.getName());
+        studentResponseDTO.setAge(student.getAge());
+        studentResponseDTO.setEmail(student.getEmail());
+        studentResponseDTO.setSubject(student.getSubject());
+        studentResponseDTO.setRollNo(student.getRollNo());
+        studentResponseDTO.setMessage("Student saved successfully");
+
+        return studentResponseDTO;
+    }
+
     private final StudentRepository studentRepository;
 
     public StudentService(StudentRepository studentRepository)
@@ -17,10 +46,10 @@ public class StudentService
         this.studentRepository = studentRepository;
     }
 
-    public Student createStudent(Student studentRequest)
+    public StudentResponseDTO createStudent(StudentRequestDTO studentRequestDTO)
     {
-        studentRequest.setDeleted(false);
-        return studentRepository.save(studentRequest);
+        Student student = mapToEntity(studentRequestDTO);
+        return mapToDTO(studentRepository.save(student));
     }
 
     public Student getStudent(Long id)

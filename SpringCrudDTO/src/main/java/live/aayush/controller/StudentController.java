@@ -1,5 +1,7 @@
 package live.aayush.controller;
 
+import live.aayush.dto.StudentRequestDTO;
+import live.aayush.dto.StudentResponseDTO;
 import live.aayush.entity.Student;
 import live.aayush.service.StudentService;
 import org.springframework.http.HttpStatus;
@@ -12,6 +14,7 @@ import java.util.List;
 @RequestMapping("/api/student")
 public class StudentController
 {
+
     private final StudentService studentService;
 
     public StudentController(StudentService studentService)
@@ -20,9 +23,9 @@ public class StudentController
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Student> createStudent(@RequestBody Student student)
+    public ResponseEntity<StudentResponseDTO> createStudent(@RequestBody StudentRequestDTO studentRequestDTO)
     {
-        Student createdStudent = studentService.createStudent(student);
+        StudentResponseDTO createdStudent = studentService.createStudent(studentRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdStudent);
     }
 
