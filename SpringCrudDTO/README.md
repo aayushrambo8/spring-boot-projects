@@ -4,7 +4,7 @@ A Spring Boot application demonstrating CRUD (Create, Read, Update, Delete) oper
 
 ## Technologies Used
 - **Java 21**
-- **Spring Boot 3.4.1** (or compatible 3.x version based on standard spring-boot-starter-parent)
+- **Spring Boot 3.4.1**
 - **Spring Web** (RESTful APIs)
 - **Spring Data JPA** (Hibernate)
 - **MySQL Connector/J** (Database connection)
@@ -12,21 +12,42 @@ A Spring Boot application demonstrating CRUD (Create, Read, Update, Delete) oper
 
 ## Functionalities
 
-The application exposes a set of RESTful APIs to manage `Student` records via the `StudentController`. It implements the DTO pattern (using `StudentRequestDTO` and `StudentResponseDTO`) to decouple the internal database entities from the API layer. 
+The application exposes a set of RESTful APIs to manage `Student` records via the `StudentController`. It extensively implements the DTO pattern (using `CreateStudentRequestDTO` and `CreateStudentResponseDTO`) to completely decouple the internal database entities from the API layer for creation, retrieval, and updating processes. Record timestamps (`createdAt` and `updatedAt`) are automatically managed by the application service during state changes.
 
 Additionally, the project supports both **hard deletion** and **soft deletion** of records.
+
+### API Testing (Bruno)
+The project includes a ready-to-use API testing collection for [Bruno](https://www.usebruno.com/). The endpoints configuration files are conveniently located inside the `src/Bruno Endpoints` directory. You can import this folder directly into your Bruno client to quickly test all the CRUD APIs without needing to configure the requests manually.
 
 ### API Endpoints
 
 | HTTP Method | Endpoint | Description |
 |---|---|---|
-| `POST` | `/api/student/create` | Creates a new student record using `StudentRequestDTO`. Returns a `StudentResponseDTO` upon success. |
-| `GET` | `/api/student/get?id={id}` | Retrieves a specific active (non-deleted) student by their ID. |
-| `GET` | `/api/student/getAll` | Retrieves a list of all active students in the database. |
-| `PUT` | `/api/student/update?id={id}` | Updates the information of an existing active student. |
+| `POST` | `/api/student/create` | Creates a new student record using `CreateStudentRequestDTO`. Returns a `CreateStudentResponseDTO` upon success. |
+| `GET` | `/api/student/get?id={id}` | Retrieves a specific active (non-deleted) student by their ID, mapping it to a `CreateStudentResponseDTO`. |
+| `GET` | `/api/student/getAll` | Retrieves a list of all active students in the database, mapping them to `CreateStudentResponseDTO`s. |
+| `PUT` | `/api/student/update?id={id}` | Updates the information of an existing active student using `CreateStudentRequestDTO`, returning a `CreateStudentResponseDTO`. |
 | `DELETE` | `/api/student/delete?id={id}` | Permanently deletes a student record from the database (Hard Delete). |
 | `DELETE` | `/api/student/deleteAll` | Permanently deletes all student records from the database. |
 | `PATCH` | `/api/student/soft-delete?id={id}` | Marks a student record as deleted by setting a `deleted` flag to true (Soft Delete), hiding it from standard fetch queries. |
+
+## Database Specification
+
+- **Database**: MySQL (compatible with version 8.0+)
+- **Schema**: A single `students` table.
+- **Table `students` columns**:
+  - `id` (BIGINT) – Primary Key, auto‑generated.
+  - `first_name` (VARCHAR) – Student's first name.
+  - `last_name` (VARCHAR) – Student's last name.
+  - `email` (VARCHAR) – Unique email address.
+  - `address` (VARCHAR) – Residential address.
+  - `phone_no` (VARCHAR) – Contact phone number.
+  - `created_at` (TIMESTAMP) – Record creation timestamp.
+  - `updated_at` (TIMESTAMP) – Record last update timestamp.
+  - `deleted` (BOOLEAN) – Soft‑delete flag, defaults to `false`.
+- **Indexes**: Primary key on `id`; unique constraint on `email`.
+- **Soft Delete**: Records are not physically removed; setting `deleted` to `true` hides them from standard fetch queries.
+- **Configuration**: Set the MySQL connection URL, username, and password in `src/main/resources/application.properties` (or `application.yml`).
 
 ## How to Run
 

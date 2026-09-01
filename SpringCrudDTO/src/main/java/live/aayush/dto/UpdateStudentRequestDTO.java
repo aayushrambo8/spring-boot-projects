@@ -1,24 +1,22 @@
 package live.aayush.dto;
 
-public class StudentResponseDTO
+import jakarta.validation.constraints.*;
+
+public class UpdateStudentRequestDTO
 {
-    private Long id;
+    @NotBlank(message = "Name field Cannot be blank")
     private String name;
+
+    @NotNull(message = "Age field Cannot be blank")
+    @Min(value = 18, message = "Age must be greater than 18")
+    @Max(value = 75, message = "Age must be less than 75")
     private int age;
+
+    @NotNull(message = "Rollno. field Cannot be blank")
     private int rollNo;
-    private String email;
+
+    @NotBlank(message = "Subject field Cannot be blank")
     private String subject;
-    private String message;
-
-    public Long getId()
-    {
-        return id;
-    }
-
-    public void setId(Long id)
-    {
-        this.id = id;
-    }
 
     public String getName()
     {
@@ -50,16 +48,6 @@ public class StudentResponseDTO
         this.rollNo = rollNo;
     }
 
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public void setEmail(String email)
-    {
-        this.email = email;
-    }
-
     public String getSubject()
     {
         return subject;
@@ -68,15 +56,5 @@ public class StudentResponseDTO
     public void setSubject(String subject)
     {
         this.subject = subject;
-    }
-
-    public String getMessage()
-    {
-        return message;
-    }
-
-    public void setMessage(String message)
-    {
-        this.message = message;
     }
 }

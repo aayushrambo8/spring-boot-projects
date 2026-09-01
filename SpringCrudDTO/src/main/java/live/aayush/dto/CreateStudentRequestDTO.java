@@ -1,45 +1,34 @@
-package live.aayush.entity;
+package live.aayush.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 import java.time.LocalDateTime;
 
-@Entity
-public class Student
+public class CreateStudentRequestDTO
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @NotNull(message = "Name field Cannot be blank")
     private String name;
-    private int age;
+
+    @NotNull(message = "Age field Cannot be blank")
+    @Min(value = 18, message = "Age must be greater than 18")
+    @Max(value = 75, message = "Age must be less than 75")
+    private Integer age;
+
+    @NotNull(message = "Rollno. field Cannot be blank")
     private int rollNo;
+
+    @NotNull(message = "Email field Cannot be blank")
+    @Email
     private String email;
+
+    @NotNull(message = "Subject field Cannot be blank")
     private String subject;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private boolean deleted = false;
 
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(boolean deleted)
-    {
-        this.deleted = deleted;
-    }
-
-    public Long getId()
-    {
-        return id;
-    }
-
-    public void setId(Long id)
-    {
-        this.id = id;
-    }
 
     public String getName()
     {
@@ -110,5 +99,4 @@ public class Student
     {
         this.updatedAt = updatedAt;
     }
-
 }
