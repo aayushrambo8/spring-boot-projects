@@ -1,35 +1,17 @@
-package live.aayush.entity;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+package live.aayush.dto;
 
 import java.time.LocalDateTime;
 
-@Entity
-public class Student
+public class UpdateStudentResponseDTO
 {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private int age;
     private int rollNo;
     private String email;
     private String subject;
-    private LocalDateTime createdAt;
+    private String message;
     private LocalDateTime updatedAt;
-    private boolean deleted = false;
-
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(boolean deleted)
-    {
-        this.deleted = deleted;
-    }
 
     public Long getId()
     {
@@ -91,14 +73,14 @@ public class Student
         this.subject = subject;
     }
 
-    public LocalDateTime getCreatedAt()
+    public String getMessage()
     {
-        return createdAt;
+        return message;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt)
+    public void setMessage(String message)
     {
-        this.createdAt = createdAt;
+        this.message = message;
     }
 
     public LocalDateTime getUpdatedAt()
@@ -110,5 +92,4 @@ public class Student
     {
         this.updatedAt = updatedAt;
     }
-
 }

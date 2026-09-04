@@ -1,8 +1,9 @@
 package live.aayush.controller;
 
-import live.aayush.dto.StudentRequestDTO;
-import live.aayush.dto.StudentResponseDTO;
-import live.aayush.entity.Student;
+import jakarta.validation.Valid;
+import live.aayush.dto.CreateStudentRequestDTO;
+import live.aayush.dto.CreateStudentResponseDTO;
+import live.aayush.dto.UpdateStudentResponseDTO;
 import live.aayush.service.StudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,32 +24,33 @@ public class StudentController
     }
 
     @PostMapping("/create")
-    public ResponseEntity<StudentResponseDTO> createStudent(@RequestBody StudentRequestDTO studentRequestDTO)
+    public ResponseEntity<CreateStudentResponseDTO> createStudent(@Valid @RequestBody CreateStudentRequestDTO createStudentRequestDTO)
     {
-        StudentResponseDTO createdStudent = studentService.createStudent(studentRequestDTO);
+        CreateStudentResponseDTO createdStudent = studentService.createStudent(createStudentRequestDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdStudent);
     }
 
     @GetMapping("/get")
-    public ResponseEntity<Student> getStudent(@RequestParam Long id)
+    public ResponseEntity<CreateStudentResponseDTO> getStudent(@RequestParam Long id)
     {
-        Student studentResponse = studentService.getStudent(id);
+        CreateStudentResponseDTO studentResponse = studentService.getStudent(id);
         if(studentResponse == null) return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         else return ResponseEntity.ok(studentResponse);
     }
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<Student>> getAllStudent()
+    public ResponseEntity<List<CreateStudentResponseDTO>> getAllStudent()
     {
-        List<Student> studentList = studentService.getAllStudent();
+        List<CreateStudentResponseDTO> studentList = studentService.getAllStudent();
         if(studentList == null) return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         else return ResponseEntity.ok(studentList);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Student> updateStudent(@RequestParam Long id, @RequestBody Student studentRequest)
+    public ResponseEntity<UpdateStudentResponseDTO> updateStudent(@RequestParam Long id,
+                                                                  @Valid @RequestBody UpdateStudentResponseDTO updateStudentRequestDTO)
     {
-        Student studentResponse = studentService.updateStudent(id, studentRequest);
+        UpdateStudentResponseDTO studentResponse = studentService.updateStudent(id, updateStudentRequestDTO);
         if(studentResponse == null) return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         else return ResponseEntity.ok(studentResponse);
     }
