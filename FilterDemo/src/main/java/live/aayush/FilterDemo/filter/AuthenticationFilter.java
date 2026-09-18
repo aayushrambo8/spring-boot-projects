@@ -10,14 +10,13 @@ import java.io.IOException;
 @Component
 public class AuthenticationFilter implements Filter
 {
-
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException
     {
         HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
         String token = httpRequest.getHeader("token");
-        if (!"12345".equals(token))
+        if (token == null || !token.equals("12345"))
         {
             httpResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             return;
