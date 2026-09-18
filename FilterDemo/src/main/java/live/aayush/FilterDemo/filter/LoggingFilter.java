@@ -11,18 +11,12 @@ import java.io.IOException;
 public class LoggingFilter implements Filter
 {
     @Override
-    public void doFilter(ServletRequest servletRequest,
-                         ServletResponse servletResponse,
-                         FilterChain filterChain)
-            throws IOException, ServletException
+    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException
     {
-        HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
-        HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
-        System.out.println("Incoming request"
-                +httpRequest.getMethod()+" "
-                +httpRequest.getRequestURI());
+        HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
+        HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
+        System.out.println("Incoming Request : " + httpServletRequest.getMethod() + " " + httpServletRequest.getRequestURI());
         filterChain.doFilter(servletRequest, servletResponse);
-        System.out.println("Response Status: "
-                + httpResponse.getStatus());
+        System.out.println("Response status: " + httpServletResponse.getStatus());
     }
 }
