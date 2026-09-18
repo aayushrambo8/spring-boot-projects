@@ -11,6 +11,5 @@ public class StudentService
         System.out.println("Student Created");
         System.out.println(studentDTO.getName());
         System.out.println(studentDTO.getEmail());
-
     }
 }
