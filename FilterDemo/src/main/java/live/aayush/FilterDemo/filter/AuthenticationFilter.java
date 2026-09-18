@@ -15,7 +15,7 @@ public class AuthenticationFilter implements Filter
     {
         HttpServletRequest httpRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
-        String token = httpRequest.getHeader("token");
+        String token = httpRequest.getParameter("token");
         if (token == null || !token.equals("12345"))
         {
             httpResponse.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
