@@ -29,6 +29,7 @@ public class ResponseFilter implements Filter
                     "Database" : "Student"
                 }
                 """.formatted(originalContentString);
+        responseWrapper.resetBuffer();
         responseWrapper.getWriter().write(modifiedContentString);
         responseWrapper.copyBodyToResponse();
 

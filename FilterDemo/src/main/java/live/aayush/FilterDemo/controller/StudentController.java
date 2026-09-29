@@ -1,6 +1,7 @@
 package live.aayush.FilterDemo.controller;
 
 import live.aayush.FilterDemo.dto.StudentDTO;
+import live.aayush.FilterDemo.dto.StudentResponseDTO;
 import live.aayush.FilterDemo.service.StudentService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,9 +16,9 @@ public class StudentController
         this.studentService = studentService;
     }
     @PostMapping
-    public ResponseEntity<String> createStudent(@RequestBody StudentDTO studentDTO)
+    public ResponseEntity<StudentResponseDTO> createStudent(@RequestBody StudentDTO studentDTO)
     {
-        studentService.createStudent(studentDTO);
-        return ResponseEntity.ok("DONE");
+        StudentResponseDTO studentResponseDTO = studentService.createStudent(studentDTO);
+        return ResponseEntity.ok(studentResponseDTO);
     }
 }

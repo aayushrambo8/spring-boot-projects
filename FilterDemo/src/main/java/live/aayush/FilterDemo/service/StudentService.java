@@ -1,15 +1,17 @@
 package live.aayush.FilterDemo.service;
 
 import live.aayush.FilterDemo.dto.StudentDTO;
+import live.aayush.FilterDemo.dto.StudentResponseDTO;
 import org.springframework.stereotype.Service;
 
 @Service
 public class StudentService
 {
-    public void createStudent(StudentDTO studentDTO)
+    public StudentResponseDTO createStudent(StudentDTO studentDTO)
     {
-        System.out.println("Student Created");
-        System.out.println(studentDTO.getName());
-        System.out.println(studentDTO.getEmail());
+        StudentResponseDTO studentResponseDTO = new StudentResponseDTO();
+        studentResponseDTO.setMessage("Student Created");
+        studentResponseDTO.setName(studentDTO.getName());
+        return studentResponseDTO;
     }
 }
