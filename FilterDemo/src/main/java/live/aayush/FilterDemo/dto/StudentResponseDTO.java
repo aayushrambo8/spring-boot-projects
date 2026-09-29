@@ -4,6 +4,7 @@ public class StudentResponseDTO
 {
     private String name;
     private String message;
+    private String email;
 
     public String getName()
     {
@@ -23,5 +24,15 @@ public class StudentResponseDTO
     public void setMessage(String message)
     {
         this.message = message;
+    }
+
+    public String getEmail()
+    {
+        return email;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
     }
 }

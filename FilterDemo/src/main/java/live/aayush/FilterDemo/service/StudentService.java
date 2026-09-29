@@ -10,8 +10,9 @@ public class StudentService
     public StudentResponseDTO createStudent(StudentDTO studentDTO)
     {
         StudentResponseDTO studentResponseDTO = new StudentResponseDTO();
-        studentResponseDTO.setMessage("Student Created");
         studentResponseDTO.setName(studentDTO.getName());
+        studentResponseDTO.setMessage("Student Created");
+        studentResponseDTO.setEmail(studentDTO.getEmail());
         return studentResponseDTO;
     }
 }
