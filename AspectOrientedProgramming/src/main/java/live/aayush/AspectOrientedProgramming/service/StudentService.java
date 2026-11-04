@@ -1,8 +1,14 @@
 package live.aayush.AspectOrientedProgramming.service;
 
 import live.aayush.AspectOrientedProgramming.dto.Student;
+import org.springframework.stereotype.Service;
 
-public interface StudentService
+@Service
+public class StudentService
 {
-    void createStudent(Student student);
+    public Student createStudent(Student student)
+    {
+       System.out.println("LoggingAspect.createStudent()");
+       return student;
+    }
 }
